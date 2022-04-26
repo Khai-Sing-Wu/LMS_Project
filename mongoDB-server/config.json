@@ -1,0 +1,9 @@
+{
+    "cloudDB" : "mongodb+srv://wumark46:wumark46@mycluster.2zbbx.mongodb.net/Laundry-Management-System?retryWrites=true&w=majority",
+    "localDB" : "",
+    "port" : "5050",
+    "host" : "localhost"
+}
+
+
+    

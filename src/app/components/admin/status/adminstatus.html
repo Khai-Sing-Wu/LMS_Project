@@ -1,0 +1,37 @@
+<ul>
+    <li> <a [routerLink]="['/admin']">Home</a> </li>
+    <li> <a  [routerLink]="['/adminstatus']"> Status </a> </li>
+    <li> <a  [routerLink]="['/admin']"> Log Out</a> </li>
+  </ul>
+
+  <div> 
+      <h2>Users List</h2>
+      <table class="table table-striped table-bordered table-responsive">
+      <thead>
+        <tr>
+            <th> Sl # </th>
+            <th> User ID </th>
+            <th> Total Clothes </th>
+            <th> Status </th>
+            <th> Set Status</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let consumer of consumerdata; index as idx;" >
+          <td>{{ idx + 1 }}</td>
+          <td>{{ consumer.uid }}</td>
+          <td>{{ consumer.coat + consumer.jeans + consumer.jacket + consumer.shorts + consumer.suit +  consumer.tshirt + consumer.undergarment}}</td>
+          <td>{{ consumer.status }}</td>
+          <td> 
+            <select #status= 'ngModel' [(ngModel)]="newStatus[idx]" (change)="updateStatus(consumer, consumer._id, idx)" id="status" name="status">
+              <option value="Ordered">Ordered</option>
+              <option value="Washing">Washing</option>
+              <option value="Drying">Drying</option>
+              <option value="Ironing">Ironing</option>
+              <option value="Ready">Ready</option>
+            </select>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    </div>

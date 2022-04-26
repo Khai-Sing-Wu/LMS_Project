@@ -1,0 +1,27 @@
+    <br>
+    <br>
+    <div class = 'container'>
+      <div>
+          <h3> Sign Up</h3>
+        <div>
+          <input type="email" placeholder="Email Address" #userEmail required />
+        </div>
+        <br>
+        <div>
+          <input  type="password"  placeholder="Password" #userPwd  required />
+        </div>
+        <br>
+        <div>
+          <button  type="submit" (click)="authService.SignUp(userEmail.value, userPwd.value)">Register</button>
+        </div>
+        <div>
+          <span class="or"><span class="orInner">Or</span></span>
+        </div>
+      <div>
+        <span
+          >Already have an account?
+          <span class="redirect" routerLink="/login">Log In</span></span
+        >
+      </div>
+    </div>
+  

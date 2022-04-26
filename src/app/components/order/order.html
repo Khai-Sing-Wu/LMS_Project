@@ -1,0 +1,55 @@
+<ul>
+    <li> <a [routerLink]="['']">Home</a> </li>
+    <li> <a [routerLink]="['/order']"> Order </a></li>
+    <li> <a  [routerLink]="['/status']"> Status </a> </li>
+    <li> <a  (click)='authService.SignOut()'> Log Out</a> </li>
+</ul>
+<div class='container'>
+    <form>
+        <div class="mb-3">
+            <label for="coat" class="form-label">Coat</label>
+            <br>
+            <input  class="form-control" (input)="updateTotal()" id = 'coat' name ="coat" #coat ='ngModel' [(ngModel)]='orderData.coat' type = 'number' min = 0 max = 100 />
+        </div>
+        <div class="mb-3">
+            <label for="jacket" class="form-label">Jacket</label>
+            <br>
+            <input  class="form-control" (input)="updateTotal()" id = 'jacket' name ="jacket" #jacket='ngModel' [(ngModel)]='orderData.jacket' type = 'number' min = 0 max = 100 />
+        </div>
+        <div class="mb-3" class="form-label">
+            <label for="jeans">Jeans</label>
+            <br>
+            <input  class="form-control" (input)="updateTotal()" id = 'jeans' name ="jeans" #jeans='ngModel' [(ngModel)]='orderData.jeans' type = 'number' min = 0 max = 100 />
+        </div>
+        <div class="mb-3">
+            <label for="shirt" class="form-label">Shirt</label>
+            <br>
+            <input  class="form-control" (input)="updateTotal()" id = 'shirt' name ="shirt" #shorts='ngModel' [(ngModel)]='orderData.shirt' type = 'number' min = 0 max = 100 />
+        </div>
+        <div class="mb-3">
+            <label for="shorts" class="form-label">Shorts</label>
+            <br>
+            <input  class="form-control" (input)="updateTotal()" id = 'shorts' name ="shorts" #shorts='ngModel' [(ngModel)]='orderData.shorts' type = 'number' min = 0 max = 100 />
+        </div>
+        <div class="mb-3">
+            <label for="suit" class="form-label"> Suit</label>
+            <br>
+            <input  class="form-control" (input)="updateTotal()" id = 'suit' name ="suit" #suit='ngModel' [(ngModel)]='orderData.suit' type = 'number' min = 0 max = 100 />
+        </div>
+        <div class="mb-3">
+            <label for="tshirt" class="form-label">T-shirt</label>
+            <br>
+            <input class="form-control"  (input)="updateTotal()" id="tshirt" name ="tshirt" #tshirt='ngModel' [(ngModel)]='orderData.tshirt' type = 'number' min = 0 max = 100 />
+        </div>
+        <div class="mb-3">
+            <label for="undergarment" class="form-label">Undergarment</label>
+            <br>
+            <input class="form-control"  (input)="updateTotal()" id="undergarment" name ="undergarment" #undergarment='ngModel' [(ngModel)]='orderData.undergarment' type = 'number' min = 0 max = 100 />
+        </div>
+        <div>
+            <p>Total : {{ total }}</p>
+        </div>
+        <button type="submit" (click)="placeOrder()" >Place Order</button>
+    </form>
+    
+</div>

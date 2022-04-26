@@ -1,0 +1,24 @@
+<br>
+<br>
+<div class = 'container'>
+    <div>
+      <h3>Sign In</h3>
+      <div>
+        <input type="email" placeholder="Email" #userEmail required>
+      </div>
+      <br>
+      <div>
+        <input type="password" placeholder="Password" #userPassword required>
+      </div>
+      <br>
+      <div>
+        <button (click)="authService.SignIn(userEmail.value, userPassword.value)"> Login </button>
+      </div>
+      <div>
+        <span class="or"><span class="orInner">Or</span></span>
+      </div>
+    </div>
+    <div>
+      <span>Don't have an account?<span class="redirect" routerLink="/signup"> Sign Up</span></span>
+    </div>
+  </div>
